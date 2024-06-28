@@ -11,7 +11,7 @@ function App() {
   }
 
   let tabContent = <p>Please select a topic.</p>;
-  if(selected){
+  if (selected) {
     tabContent = (
       <div id="tab-content">
         <h3>{EXAMPLES[selected].title}</h3>
@@ -37,16 +37,15 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-          {CORE_CONCEPTS.map((conceptItem) => (
-             <TabButtons
-              key={conceptItem.title}
-             isSelected={selected === conceptItem.title}
-             onSelect={() => handleSelectedButton(conceptItem.title)}
-           >
-             {conceptItem.title}
-         </TabButtons>
+            {CORE_CONCEPTS.map((conceptItem) => (
+              <TabButtons
+                key={conceptItem.title}
+                isSelected={selected === conceptItem.title}
+                onSelect={() => handleSelectedButton(conceptItem.title)}
+              >
+                {conceptItem.title}
+              </TabButtons>
             ))}
-            
           </menu>
           {tabContent}
         </section>
